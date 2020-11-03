@@ -17,6 +17,11 @@
 
 #--- END OF EXAMPLES ---
 
+# Sam James <sam@gentoo.org> (2020-10-24)
+# asm redc is only available on amd64,
+# ppc64. bug #750974.
+sci-mathematics/gmp-ecm -custom-tune
+
 # Thomas Deutschmann <whissi@gentoo.org> (2020-10-07)
 # <app-admin/salt-3000 is Python 3.6 but last Python 3.6
 # compatible dev-python/libvirt-python version was removed
@@ -179,9 +184,10 @@ sys-boot/grub -libzfs
 # [cuda] is unmasked in this profiles.
 media-libs/opencv -contribxfeatures2d
 
-# Thomas Deutschmann <whissi@gentoo.org> (2017-03-01)
-# dev-libs/libmaxminddb is keyworded on amd64
-app-admin/rsyslog -mdblookup
+# Thomas Deutschmann <whissi@gentoo.org> (2020-10-22)
+# -imhttp: www-servers/civetweb is keyworded on amd64
+# -mdblookup: dev-libs/libmaxminddb is keyworded on amd64
+app-admin/rsyslog -imhttp -mdblookup
 
 # Alexis Ballier <aballier@gentoo.org> (2017-02-21)
 # spacetime works on amd64

@@ -1,6 +1,11 @@
 # Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
+# Alexey Sokolov <alexey+gentoo@asokolov.org> (2020-10-28)
+# dev-qt/linguist-tools-5.15.0 and 5.15.1 OOM with bad_alloc.
+# https://bugs.gentoo.org/751418
+>=sci-astronomy/stellarium-0.20.3 nls
+
 # Thomas Deutschmann <whissi@gentoo.org> (2020-10-07)
 # <app-admin/salt-3000 is Python 3.6 but last Python 3.6
 # compatible dev-python/libvirt-python version was removed
@@ -201,9 +206,10 @@ media-gfx/digikam mediaplayer
 # Requires USE=cuda that is masked in this profile.
 media-gfx/blender opensubdiv
 
-# Thomas Deutschmann <whissi@gentoo.org> (2017-03-01)
-# dev-libs/libmaxminddb is keyworded on x86
-app-admin/rsyslog -mdblookup
+# Thomas Deutschmann <whissi@gentoo.org> (2020-10-22)
+# -imhttp: www-servers/civetweb is keyworded on x86
+# -mdblookup: dev-libs/libmaxminddb is keyworded on x86
+app-admin/rsyslog -imhttp -mdblookup
 
 # David Seifert <soap@gentoo.org> (2017-02-10)
 # Requires dev-lua/ldoc for building documentation,

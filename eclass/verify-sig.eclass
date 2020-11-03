@@ -98,7 +98,14 @@ verify-sig_verify_detached() {
 		--keyserver "${VERIFY_SIG_OPENPGP_KEYSERVER}"
 	)
 
-	einfo "Verifying ${file##*/} ..."
+	# GPG upstream knows better than to follow the spec, so we can't
+	# override this directory.  However, there is a clean fallback
+	# to GNUPGHOME.
+	addpredict /run/user
+
+	local filename=${file##*/}
+	[[ ${file} == - ]] && filename='(stdin)'
+	einfo "Verifying ${filename} ..."
 	gemato gpg-wrap -K "${key}" "${extra_args[@]}" -- \
 		gpg --verify "${sig}" "${file}" ||
 		die "PGP signature verification failed"
